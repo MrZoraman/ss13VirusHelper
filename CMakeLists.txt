@@ -8,7 +8,11 @@ set(SOURCE_DIR ${CMAKE_CURRENT_SOURCE_DIR}/src)
 set(HEADER_DIR ${CMAKE_CURRENT_SOURCE_DIR}/include)
 
 add_executable(${PROJ_NAME}
-    ${SOURCE_DIR}/main.cpp)
+    ${SOURCE_DIR}/main.cpp
+    ${SOURCE_DIR}/Virus.cpp
+    ${HEADER_DIR}/Virus.hpp
+    ${SOURCE_DIR}/Symptom.cpp
+    ${HEADER_DIR}/Symptom.hpp)
 
 target_include_directories(VirusHelper PUBLIC
     ${HEADER_DIR}
