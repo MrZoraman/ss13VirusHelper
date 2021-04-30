@@ -1,8 +1,12 @@
 #include <iostream>
 #include <cstdlib>
 
+#include "VirusList.hpp"
+
+using namespace VirusHelper;
+
 int main()
 {
-    std::cout << "Hello, world!";
+    auto list = MakeVirusList();
     return EXIT_SUCCESS;
 }

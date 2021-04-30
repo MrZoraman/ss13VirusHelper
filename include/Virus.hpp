@@ -8,11 +8,11 @@
 
 namespace VirusHelper
 {
-    const std::int8_t kNumSymptoms = 6;
+    const std::int8_t kNumSymptomsPerVirus = 6;
 
     struct Virus
     {
-        std::array<Symptom*, kNumSymptoms> symptoms;
+        std::array<size_t, kNumSymptomsPerVirus> symptoms;
 
         std::int8_t stealth;
         std::int8_t resistance;
