@@ -12,13 +12,15 @@ add_executable(${PROJ_NAME}
     ${SOURCE_DIR}/Virus.cpp
     ${HEADER_DIR}/Virus.hpp
     ${SOURCE_DIR}/Symptom.cpp
-    ${HEADER_DIR}/Symptom.hpp)
+    ${HEADER_DIR}/Symptom.hpp
+    ${SOURCE_DIR}/SymptomList.cpp
+    ${HEADER_DIR}/SymptomList.hpp)
 
 target_include_directories(VirusHelper PUBLIC
     ${HEADER_DIR}
 )
 
-set_property(TARGET ${PROJ_NAME} PROPERTY CXX_STANDARD 17)
+set_property(TARGET ${PROJ_NAME} PROPERTY CXX_STANDARD 20)
 set_property(TARGET ${PROJ_NAME} PROPERTY CXX_STANDARD_REQUIRED ON)
 
 if(MSVC)
