@@ -12,12 +12,14 @@ namespace VirusHelper
 
     struct Virus
     {
-        std::array<size_t, kNumSymptomsPerVirus> symptoms;
+        std::array<size_t, kNumSymptomsPerVirus> symptoms{};
 
-        std::int8_t stealth;
-        std::int8_t resistance;
-        std::int8_t stage_speed;
-        std::int8_t transmission;
+        std::int8_t stealth = 0;
+        std::int8_t resistance = 0;
+        std::int8_t stage_speed = 0;
+        std::int8_t transmission = 0;
+
+        void CalculateStats();
     };
 }
 

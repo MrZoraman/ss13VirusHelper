@@ -31,7 +31,7 @@ namespace VirusHelper
         std::array<size_t, kNumSymptomsPerVirus> symptoms{};
         size_t virus_index = 0;
         PopulateVirusList(*viruses, symptoms, 0, 0, virus_index);
-        std::cout << "Made " << virus_index << " viruses!";
+        std::cout << "Made " << virus_index << " viruses!\n";
         return viruses;
     }
 
