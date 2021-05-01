@@ -14,9 +14,9 @@ namespace VirusHelper
 
         VirusSymptomList symptoms_{-1, -1, -1, -1, -1, -1};
 
-        std::int32_t stealth_ = 0;
-        std::int32_t resistance_ = 0;
-        std::int32_t stage_speed_ = 0;
+        std::int32_t stealth_ = 1;
+        std::int32_t resistance_ = 1;
+        std::int32_t stage_speed_ = 1;
         std::int32_t transmission_ = 1;
 
         std::int32_t min_stealth_ = -1;
