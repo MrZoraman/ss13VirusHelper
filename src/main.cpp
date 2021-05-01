@@ -236,7 +236,7 @@ int main()
                 std::cout << "Symptoms:\n";
                 for (const auto& symptom_index : virus.symptoms)
                 {
-                    std::cout << "  - " << SymptomList[symptom_index].name << "\n";
+                    std::cout << "  * " << SymptomList[symptom_index].name << "\n";
                 }
             }
         }
