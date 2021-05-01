@@ -22,6 +22,8 @@ namespace VirusHelper
         std::int8_t transmission = 0;
 
         void CalculateStats();
+
+        bool Contains(int32_t symptom) const;
     };
 }
 

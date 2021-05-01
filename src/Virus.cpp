@@ -20,4 +20,18 @@ namespace VirusHelper
         }
     }
 
+    bool Virus::Contains(int32_t symptom) const
+    {
+        for (auto symptom_index : symptoms)
+        {
+            if (symptom_index == symptom)
+            {
+                return true;
+            }
+        }
+
+        return false;
+    }
+
+
 }

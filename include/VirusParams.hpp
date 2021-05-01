@@ -5,6 +5,7 @@
 #include <array>
 
 #include "Virus.hpp"
+#include "VirusList.hpp"
 
 namespace VirusHelper
 {
@@ -24,10 +25,14 @@ namespace VirusHelper
         std::int32_t min_stage_speed_ = -1;
         std::int32_t min_transmission_ = -1;
 
+        std::int32_t GetScore(const Virus& v) const;
+
     public:
         void PrintSymptoms() const;
         void PrintWeights() const;
         void PrintThresholds() const;
+
+        [[nodiscard]] std::int32_t FindVirus(const std::array<Virus, kNumViruses>& viruses) const;
 
         void SetSymptom(std::int32_t virus_symptom_index, std::int32_t symptom_index);
 

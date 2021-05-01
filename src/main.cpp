@@ -16,7 +16,8 @@ enum class TopMenuChoice
     ListSymptoms,
     SelectSymptom,
     SetThreshold,
-    SetWeight
+    SetWeight,
+    Search
 };
 
 enum class VirusStat
@@ -36,6 +37,7 @@ TopMenuChoice PrintTopMenu()
     std::cout << "3 - Select Symptom\n";
     std::cout << "4 - Set Threshold\n";
     std::cout << "5 - Set Weight\n";
+    std::cout << "6 - Search\n";
 
     std::cout << "> ";
     std::int32_t choice = 0;
@@ -55,6 +57,8 @@ TopMenuChoice PrintTopMenu()
         return TopMenuChoice::SetThreshold;
     case 5:
         return TopMenuChoice::SetWeight;
+    case 6:
+        return TopMenuChoice::Search;
     default:
         std::cout << "Unknown choice!\n";
         return PrintTopMenu();
@@ -218,6 +222,23 @@ int main()
         else if (choice == TopMenuChoice::SetWeight)
         {
             SetWeight(params);
+        }
+        else if (choice == TopMenuChoice::Search)
+        {
+            auto candidate = params.FindVirus(*list);
+            if (candidate >= 0)
+            {
+                auto& virus = (*list)[candidate];
+                std::cout << "Stealth:      " << virus.stealth << "\n";
+                std::cout << "Resistance:   " << virus.resistance << "\n";
+                std::cout << "Stage Speed:  " << virus.stage_speed << "\n";
+                std::cout << "Transmission: " << virus.transmission << "\n";
+                std::cout << "Symptoms:\n";
+                for (const auto& symptom_index : virus.symptoms)
+                {
+                    std::cout << "  - " << SymptomList[symptom_index].name << "\n";
+                }
+            }
         }
     }
 
