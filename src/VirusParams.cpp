@@ -109,7 +109,7 @@ namespace VirusHelper
 
         if (best_candidate > 0)
         {
-            std::cout << "Candidate found! Also found " << equalScoresFound << " equal candidates.";
+            std::cout << "Candidate found! Also found " << equalScoresFound << " equal candidates.\n";
         }
 
         return best_candidate;
