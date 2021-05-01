@@ -10,9 +10,11 @@ namespace VirusHelper
 {
     const std::int8_t kNumSymptomsPerVirus = 6;
 
+    typedef std::array<int32_t, kNumSymptomsPerVirus> VirusSymptomList;
+
     struct Virus
     {
-        std::array<size_t, kNumSymptomsPerVirus> symptoms{};
+        VirusSymptomList symptoms{ -1, -1, -1, -1, -1, -1};
 
         std::int8_t stealth = 0;
         std::int8_t resistance = 0;

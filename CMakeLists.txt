@@ -16,7 +16,9 @@ add_executable(${PROJ_NAME}
     ${SOURCE_DIR}/SymptomList.cpp
     ${HEADER_DIR}/SymptomList.hpp
     ${SOURCE_DIR}/VirusList.cpp
-    ${HEADER_DIR}/VirusList.hpp)
+    ${HEADER_DIR}/VirusList.hpp
+    ${SOURCE_DIR}/VirusParams.cpp
+    ${HEADER_DIR}/VirusParams.hpp)
 
 target_include_directories(VirusHelper PUBLIC
     ${HEADER_DIR}
