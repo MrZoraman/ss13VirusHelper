@@ -79,10 +79,31 @@ namespace VirusHelper
         for (auto symptom_index : v.symptoms)
         {
             auto symptom = SymptomList[symptom_index];
-            score += symptom.stealth * stealth_;
-            score += symptom.resistance * resistance_;
-            score += symptom.stage_speed * stage_speed_;
-            score += symptom.transmission * transmission_;
+            std::int32_t value = 0;
+
+            value = symptom.stealth * stealth_;
+            if (value > 0)
+            {
+                score += value;
+            }
+
+            value = symptom.resistance * resistance_;
+            if (value > 0)
+            {
+                score += value;
+            }
+
+            value = symptom.stage_speed * stage_speed_;
+            if (value > 0)
+            {
+                score += value;
+            }
+
+            value = symptom.transmission * transmission_;
+            if (value > 0)
+            {
+                score += value;
+            }
         }
 
         return score;
