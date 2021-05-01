@@ -229,10 +229,10 @@ int main()
             if (candidate >= 0)
             {
                 auto& virus = (*list)[candidate];
-                std::cout << "Stealth:      " << virus.stealth << "\n";
-                std::cout << "Resistance:   " << virus.resistance << "\n";
-                std::cout << "Stage Speed:  " << virus.stage_speed << "\n";
-                std::cout << "Transmission: " << virus.transmission << "\n";
+                std::cout << "Stealth:      " << +virus.stealth << "\n";
+                std::cout << "Resistance:   " << +virus.resistance << "\n";
+                std::cout << "Stage Speed:  " << +virus.stage_speed << "\n";
+                std::cout << "Transmission: " << +virus.transmission << "\n";
                 std::cout << "Symptoms:\n";
                 for (const auto& symptom_index : virus.symptoms)
                 {

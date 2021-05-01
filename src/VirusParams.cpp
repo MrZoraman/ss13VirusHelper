@@ -30,19 +30,19 @@ namespace VirusHelper
     void VirusParams::PrintWeights() const
     {
         std::cout << "Weights:\n";
-        std::cout << "  Stealth:      " << stealth_ << "\n";
-        std::cout << "  Resistance:   " << resistance_ << "\n";
-        std::cout << "  Stage Speed:  " << stage_speed_ << "\n";
-        std::cout << "  Transmission: " << transmission_ << "\n";
+        std::cout << "  Stealth:      " << +stealth_ << "\n";
+        std::cout << "  Resistance:   " << +resistance_ << "\n";
+        std::cout << "  Stage Speed:  " << +stage_speed_ << "\n";
+        std::cout << "  Transmission: " << +transmission_ << "\n";
     }
 
     void VirusParams::PrintThresholds() const
     {
         std::cout << "Min Thresholds:\n";
-        std::cout << "  Min Stealth:      " << min_stealth_ << "\n";
-        std::cout << "  Min Resistance:   " << min_resistance_ << "\n";
-        std::cout << "  Min Stage Speed:  " << min_stage_speed_ << "\n";
-        std::cout << "  Min Transmission: " << min_transmission_ << "\n";
+        std::cout << "  Min Stealth:      " << +min_stealth_ << "\n";
+        std::cout << "  Min Resistance:   " << +min_resistance_ << "\n";
+        std::cout << "  Min Stage Speed:  " << +min_stage_speed_ << "\n";
+        std::cout << "  Min Transmission: " << +min_transmission_ << "\n";
     }
 
     std::int32_t VirusParams::GetScore(const Virus& v) const
