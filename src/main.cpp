@@ -12,17 +12,30 @@ using namespace VirusHelper;
 enum class TopMenuChoice
 {
     Exit,
-    ViewVirus,
+    ViewQuery,
     ListSymptoms,
-    SelectSymptom
+    SelectSymptom,
+    SetThreshold,
+    SetWeight
+};
+
+enum class VirusStat
+{
+    Stealth,
+    Resistance,
+    StageSpeed,
+    Transmission,
+    Unknown
 };
 
 TopMenuChoice PrintTopMenu()
 {
     std::cout << "0 - Exit\n";
-    std::cout << "1 - View Selected Symptoms\n";
+    std::cout << "1 - View Query\n";
     std::cout << "2 - List All Available Symptoms\n";
     std::cout << "3 - Select Symptom\n";
+    std::cout << "4 - Set Threshold\n";
+    std::cout << "5 - Set Weight\n";
 
     std::cout << "> ";
     std::int32_t choice = 0;
@@ -33,14 +46,100 @@ TopMenuChoice PrintTopMenu()
     case 0:
         return TopMenuChoice::Exit;
     case 1:
-        return TopMenuChoice::ViewVirus;
+        return TopMenuChoice::ViewQuery;
     case 2:
         return TopMenuChoice::ListSymptoms;
     case 3:
         return TopMenuChoice::SelectSymptom;
+    case 4:
+        return TopMenuChoice::SetThreshold;
+    case 5:
+        return TopMenuChoice::SetWeight;
     default:
         std::cout << "Unknown choice!\n";
         return PrintTopMenu();
+    }
+}
+
+VirusStat ChooseStat()
+{
+    std::cout << "Choose a stat: \n";
+    std::cout << "0 - Stealth\n";
+    std::cout << "1 - Resistance\n";
+    std::cout << "2 - StageSpeed\n";
+    std::cout << "3 - Transmission\n";
+
+    std::int32_t choice = -1;
+    while (choice < 0 || choice > 4)
+    {
+        std::cout << "> ";
+        std::cin >> choice;
+
+        if (choice < 0 || choice > 4)
+        {
+            std::cout << "Choice out of range!\n";
+        }
+    }
+
+    switch(choice)
+    {
+    case 0: return VirusStat::Stealth;
+    case 1: return VirusStat::Resistance;
+    case 2: return VirusStat::StageSpeed;
+    case 3: return VirusStat::Transmission;
+    default: return VirusStat::Unknown; // should be impossible
+    }
+}
+
+void SetThreshold(VirusParams& params)
+{
+    VirusStat stat_choice = ChooseStat();
+    std::int32_t threshold;
+    std::cout << "Set threshold: \n";
+    std::cout << "> ";
+    std::cin >> threshold;
+
+    if (stat_choice == VirusStat::Stealth)
+    {
+        params.set_min_stealth(threshold);
+    }
+    else if (stat_choice == VirusStat::Resistance)
+    {
+        params.set_min_resistance(threshold);
+    }
+    else if (stat_choice == VirusStat::StageSpeed)
+    {
+        params.set_min_stage_speed(threshold);
+    }
+    else if (stat_choice == VirusStat::Transmission)
+    {
+        params.set_min_transmission(threshold);
+    }
+}
+
+void SetWeight(VirusParams& params)
+{
+    VirusStat stat_choice = ChooseStat();
+    std::int32_t weight;
+    std::cout << "Set weight: \n";
+    std::cout << "> ";
+    std::cin >> weight;
+
+    if (stat_choice == VirusStat::Stealth)
+    {
+        params.set_stealth(weight);
+    }
+    else if (stat_choice == VirusStat::Resistance)
+    {
+        params.set_resistance(weight);
+    }
+    else if (stat_choice == VirusStat::StageSpeed)
+    {
+        params.set_stage_speed(weight);
+    }
+    else if (stat_choice == VirusStat::Transmission)
+    {
+        params.set_transmission(weight);
     }
 }
 
@@ -87,36 +186,38 @@ int main()
     std::cout << "All possible viruses have been calculated!\n";
 
     VirusParams params;
-
-    auto exit = false;
-    while (!exit)
+    
+    while (true)
     {
         auto choice = PrintTopMenu();
-        switch (choice)
+        if (choice == TopMenuChoice::Exit)
         {
-            case TopMenuChoice::Exit:
+            return EXIT_SUCCESS;
+        }
+        else if (choice == TopMenuChoice::ViewQuery)
+        {
+            params.PrintSymptoms();
+            params.PrintWeights();
+            params.PrintThresholds();
+        }
+        else if (choice == TopMenuChoice::ListSymptoms)
+        {
+            for (auto ii = 0; ii < SymptomList.size(); ++ii)
             {
-                exit = true;
-                break;
+                std::cout << "[" << ii << "] " << SymptomList[ii].name << "\n";
             }
-            case TopMenuChoice::ViewVirus:
-            {
-                params.PrintSymptoms();
-                break;
-            }
-            case TopMenuChoice::ListSymptoms:
-            {
-                for (auto ii = 0; ii < SymptomList.size(); ++ii)
-                {
-                    std::cout << "[" << ii << "] " << SymptomList[ii].name << "\n";
-                }
-                break;
-            }
-            case TopMenuChoice::SelectSymptom:
-            {
-                SelectSymptom(params);
-                break;
-            }
+        }
+        else if (choice == TopMenuChoice::SelectSymptom)
+        {
+            SelectSymptom(params);
+        }
+        else if (choice == TopMenuChoice::SetThreshold)
+        {
+            SetThreshold(params);
+        }
+        else if (choice == TopMenuChoice::SetWeight)
+        {
+            SetWeight(params);
         }
     }
 
