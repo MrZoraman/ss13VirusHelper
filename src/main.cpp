@@ -66,7 +66,7 @@ VirusStat ChooseStat()
     std::cout << "Choose a stat: \n";
     std::cout << "0 - Stealth\n";
     std::cout << "1 - Resistance\n";
-    std::cout << "2 - StageSpeed\n";
+    std::cout << "2 - Stage Speed\n";
     std::cout << "3 - Transmission\n";
 
     std::int32_t choice = -1;
