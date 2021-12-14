@@ -47,6 +47,11 @@ namespace VirusHelper
 
     std::int32_t VirusParams::GetScore(const Virus& v) const
     {
+        if (stealth_block_ && v.stealth > 1)
+        {
+            return -1;
+        }
+
         if (min_stealth_ >= 0 && v.stealth < min_stealth_)
         {
             return -1;
@@ -112,17 +117,19 @@ namespace VirusHelper
     std::int32_t VirusParams::FindVirus(const std::array<Virus, kNumViruses>& viruses) const
     {
         std::int32_t best_candidate = -1;
+        std::int32_t best_score = -1;
         std::int32_t equalScoresFound = 0;
         for (auto ii = 0; ii < viruses.size(); ++ii)
         {
             auto score = GetScore(viruses[ii]);
-            if (score > best_candidate)
+            if (score > best_score)
             {
                 best_candidate = ii;
                 equalScoresFound = 0;
+                best_score = score;
             }
 
-            if (score == best_candidate)
+            if (score == best_score)
             {
                 ++equalScoresFound;
             }
@@ -151,6 +158,11 @@ namespace VirusHelper
         }
 
         symptoms_[virus_symptom_index] = symptom_index;
+    }
+
+    bool VirusParams::IsStealthBlocked() const
+    {
+        return stealth_block_;
     }
 
     void VirusParams::set_stealth(std::int32_t stealth)
@@ -191,6 +203,11 @@ namespace VirusHelper
     void VirusParams::set_min_transmission(std::int32_t min_transmission)
     {
         min_transmission_ = min_transmission;
+    }
+
+    void VirusParams::ToggleStealthBlock()
+    {
+        stealth_block_ = !stealth_block_;
     }
 
 }

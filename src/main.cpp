@@ -17,7 +17,8 @@ enum class TopMenuChoice
     SelectSymptom,
     SetThreshold,
     SetWeight,
-    Search
+    Search,
+    ToggleStealthBlock
 };
 
 enum class VirusStat
@@ -38,6 +39,7 @@ TopMenuChoice PrintTopMenu()
     std::cout << "4 - Set Threshold\n";
     std::cout << "5 - Set Weight\n";
     std::cout << "6 - Search\n";
+    std::cout << "7 - Toggle Stealth Block\n";
 
     std::cout << "> ";
     std::int32_t choice = 0;
@@ -59,6 +61,8 @@ TopMenuChoice PrintTopMenu()
         return TopMenuChoice::SetWeight;
     case 6:
         return TopMenuChoice::Search;
+    case 7:
+        return TopMenuChoice::ToggleStealthBlock;
     default:
         std::cout << "Unknown choice!\n";
         return PrintTopMenu();
@@ -203,6 +207,14 @@ int main()
             params.PrintSymptoms();
             params.PrintWeights();
             params.PrintThresholds();
+            if (params.IsStealthBlocked())
+            {
+                std::cout << "Stealth block: [*]\n";
+            }
+            else
+            {
+                std::cout << "Stealth block: [ ]\n";
+            }
         }
         else if (choice == TopMenuChoice::ListSymptoms)
         {
@@ -239,6 +251,10 @@ int main()
                     std::cout << "  * " << SymptomList[symptom_index].name << "\n";
                 }
             }
+        }
+        else if (choice == TopMenuChoice::ToggleStealthBlock)
+        {
+            params.ToggleStealthBlock();
         }
     }
 

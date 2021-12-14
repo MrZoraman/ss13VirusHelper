@@ -25,12 +25,15 @@ namespace VirusHelper
         std::int32_t min_stage_speed_ = -1;
         std::int32_t min_transmission_ = -1;
 
+        bool stealth_block_ = false;
+
         std::int32_t GetScore(const Virus& v) const;
 
     public:
         void PrintSymptoms() const;
         void PrintWeights() const;
         void PrintThresholds() const;
+        bool IsStealthBlocked() const;
 
         [[nodiscard]] std::int32_t FindVirus(const std::array<Virus, kNumViruses>& viruses) const;
 
@@ -45,6 +48,8 @@ namespace VirusHelper
         void set_min_resistance(std::int32_t min_resistance);
         void set_min_stage_speed(std::int32_t min_stage_speed);
         void set_min_transmission(std::int32_t min_transmission);
+
+        void ToggleStealthBlock();
     };
 }
 
