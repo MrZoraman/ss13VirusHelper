@@ -25,6 +25,8 @@ namespace VirusHelper
         std::int32_t min_stage_speed_ = -1;
         std::int32_t min_transmission_ = -1;
 
+        std::int32_t blacklist_symptom_ = -1;
+
         bool stealth_block_ = false;
 
         std::int32_t GetScore(const Virus& v) const;
@@ -48,6 +50,8 @@ namespace VirusHelper
         void set_min_resistance(std::int32_t min_resistance);
         void set_min_stage_speed(std::int32_t min_stage_speed);
         void set_min_transmission(std::int32_t min_transmission);
+
+        void set_blacklist_symptom(std::int32_t virus_symptom_index);
 
         void ToggleStealthBlock();
     };

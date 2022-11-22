@@ -18,7 +18,8 @@ enum class TopMenuChoice
     SetThreshold,
     SetWeight,
     Search,
-    ToggleStealthBlock
+    ToggleStealthBlock,
+    SetBlacklistSymptom
 };
 
 enum class VirusStat
@@ -40,6 +41,7 @@ TopMenuChoice PrintTopMenu()
     std::cout << "5 - Set Weight\n";
     std::cout << "6 - Search\n";
     std::cout << "7 - Toggle Stealth Block\n";
+    std::cout << "8 - Set Blacklist Symptom\n";
 
     std::cout << "> ";
     std::int32_t choice = 0;
@@ -63,6 +65,8 @@ TopMenuChoice PrintTopMenu()
         return TopMenuChoice::Search;
     case 7:
         return TopMenuChoice::ToggleStealthBlock;
+    case 8:
+        return TopMenuChoice::SetBlacklistSymptom;
     default:
         std::cout << "Unknown choice!\n";
         return PrintTopMenu();
@@ -255,6 +259,22 @@ int main()
         else if (choice == TopMenuChoice::ToggleStealthBlock)
         {
             params.ToggleStealthBlock();
+        }
+        else if (choice == TopMenuChoice::SetBlacklistSymptom)
+        {
+            std::int32_t virus_symptom_index = -1;
+            while (virus_symptom_index < 0 || virus_symptom_index >= kNumSymptomsPerVirus)
+            {
+                std::cout << "Select a symptom index between 0 and " << +kNumSymptomsPerVirus - 1 << " inclusive:\n";
+                std::cout << "> ";
+                std::cin >> virus_symptom_index;
+                if (virus_symptom_index < 0 || virus_symptom_index >= kNumSymptomsPerVirus)
+                {
+                    std::cout << "Symptom index out of range!\n";
+                }
+            }
+
+            params.set_blacklist_symptom(virus_symptom_index);
         }
     }
 

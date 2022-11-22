@@ -72,6 +72,11 @@ namespace VirusHelper
             return -1;
         }
 
+        if(blacklist_symptom_ >= 0 && v.Contains(blacklist_symptom_))
+        {
+            return -1;
+        }
+
         for (auto symptom : symptoms_)
         {
             if (symptom >= 0 && !v.Contains(symptom))
@@ -210,4 +215,8 @@ namespace VirusHelper
         stealth_block_ = !stealth_block_;
     }
 
+    void VirusParams::set_blacklist_symptom(std::int32_t virus_symptom_index)
+    {
+        blacklist_symptom_ = virus_symptom_index;
+    }
 }
