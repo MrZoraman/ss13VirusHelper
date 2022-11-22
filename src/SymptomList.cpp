@@ -8,7 +8,7 @@
 
 namespace VirusHelper
 {
-    const std::array<const Symptom, kNumSymptoms> SymptomList = {
+    std::array<Symptom, kNumSymptoms> SymptomList = {
         Symptom
         {
             .name = "Acute Respiratory Distress Syndrome",
@@ -124,9 +124,9 @@ namespace VirusHelper
         Symptom
         {
             .name = "Hallucigen",
-            .stealth = -1,
-            .resistance = -3,
-            .stage_speed = -3,
+            .stealth = 1,
+            .resistance = -4,
+            .stage_speed = 1,
             .transmission = -1
         },
         Symptom
@@ -176,14 +176,6 @@ namespace VirusHelper
             .resistance = -2,
             .stage_speed = 1,
             .transmission = -3
-        },
-        Symptom
-        {
-            .name = "Nano-symbiosis",
-            .stealth = 0,
-            .resistance = 2,
-            .stage_speed = 2,
-            .transmission = -1
         },
         Symptom
         {
@@ -267,19 +259,11 @@ namespace VirusHelper
         },
         Symptom
         {
-            .name = "Shivering",
+            .name = "Chills",
             .stealth = 0,
             .resistance = 2,
             .stage_speed = 3,
             .transmission = 2
-        },
-        Symptom
-        {
-            .name = "Silicolysis",
-            .stealth = 0,
-            .resistance = 4,
-            .stage_speed = -1,
-            .transmission = 1
         },
         Symptom
         {
@@ -318,7 +302,7 @@ namespace VirusHelper
             .name = "Toxolysis",
             .stealth = 0,
             .resistance = -2,
-            .stage_speed = -2,
+            .stage_speed = 2,
             .transmission = -2
         },
         Symptom

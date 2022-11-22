@@ -17,7 +17,7 @@
 | -1 || 3 || 1 || 2 || 1 || [[Virus Food]]/[[Guide_to_chemistry#Virus Rations|Virus Rations]] || style="color:#ff0000"| The virus irritates the throat of the host, causing occasional coughing. Each cough will try to infect bystanders who are within 1 tile of the host with the virus.||<span title="The host will drop small items when coughing.">Resistance 11</span>, <span title="Occasionally causes coughing fits that stun the host. The extra coughs do not spread the virus.">Resistance 15</span>, <span title="Increases cough frequency">Stage Speed 6</span>, <span title="Coughing will now infect bystanders up to 2 tiles away.">Transmission 7</span>, <span title="The symptom remains hidden until active">Stealth 4</span>
 |-
 !Confusion
-|1 || -1 || -3 || 0 || 4 || [[Guide_to_chemistry#Unstable Mutagen|Unstable Mutagen]]/[[Guide_to_chemistry#Sucrose Agar|Sucrose Agar]] || style="color:#ff0000"| Makes the affected mob be confused for short periods of time, making them walk in random directions.||<span title="Causes brain damage over time">Resistance 6</span>, <span title="Increases confusion duration and strength">Transmission 6</span>, <span title="The symptom remains hidden until active">Stealth 4</span>
+|1 || -1 || -3 || 0 || 4 || [[Guide_to_chemistry#Unstable Mutagen|Unstable Mutagen]]/[[Guide_to_chemistry#Sucrose Agar|Sucrose Agar]] || style="color:#ff0000"| Makes the affected mob be confused for short periods of time, making them walk in random directions.||<span title="Causes brain damage over time">Resistance 6</span>, <span title="Increases confusion duration and strength">Transmission 6</span>, <span title="The symptom remains hidden until active">Stealth 4</span>, <span title="Makes the affected mob illiterate and unable to read or write and use many electronics.">Stage Speed 6</span>
 |-
 !Deafness
 | -1 || -2 || -1 || -3 || 4 || [[Guide_to_chemistry#Unstable Mutagen|Unstable Mutagen]]/[[Guide_to_chemistry#Sucrose Agar|Sucrose Agar]] || style="color:#ff0000"| Causes intermittent loss of hearing.|| <span title="Causes permanent deafness, instead of intermittent">Resistance 9</span>, <span title="The symptom remains hidden until active">Stealth 4</span>
@@ -41,7 +41,7 @@
 |0 || 3 || 3 || 2 || 2 || [[Guide_to_chemistry#Unstable Mutagen|Unstable Mutagen]]/[[Virus Food]] || style="color:#ff0000"| Heats up your body. Will not reach damaging levels of heat unless resistance thresholds are met.||<span title="Increases fever intensity, fever can overheat and harm the host">Resistance 5</span>, <span title="Further increases fever intensity">Resistance 10</span>
 |-
 !Hallucigen
-| -1 || -3 || -3 || -1 || 5 || [[Plasma]]/[[Guide_to_chemistry#Weakened Virus Plasma|Weakened Virus Plasma]] || style="color:#ff0000"| Makes the affected mob have hallucinations for short periods of time. Available in [[Supply_crates#Virus_crate|Virus Crates]].||<span title="Increases the amount of hallucinations">Stage Speed 7</span>, <span title="The virus mimics positive symptoms">Stealth 4</span>
+| 1 || -4 || 1 || -1 || 5 || [[Plasma]]/[[Guide_to_chemistry#Weakened Virus Plasma|Weakened Virus Plasma]] || style="color:#ff0000"| Makes the affected mob have hallucinations for short periods of time. Available in [[Supply_crates#Virus_crate|Virus Crates]].||<span title="Increases the amount of hallucinations">Stage Speed 7</span>, <span title="The virus mimics positive symptoms">Stealth 4</span>
 |-
 !Headache
 | -1 || 4 || 2 || 0 || 1 || [[Virus Food]]/[[Guide_to_chemistry#Virus Rations|Virus Rations]] || style="color:#0000ff" | Displays an annoying message! Should be used for buffing your disease.||<span title="Headaches will cause severe pain, that weakens the host">Stage Speed 6</span>, <span title="Headaches become less frequent but far more intense, preventing any action from the host">Stage Speed 9</span>, <span title="Reduces headache frequency until later stages">Stealth 4</span>
@@ -60,9 +60,6 @@
 |-
 !Mind Restoration
 | -1 || -2 || 1 || -3 || 5 || [[Plasma]]/[[Guide_to_chemistry#Weakened Virus Plasma|Weakened Virus Plasma]] || style="color:#00aa00"| The virus strengthens the bonds between neurons, reducing the duration of any ailment of the mind. Heals brain damage, and can cure mild and heavy traumas if upgraded. || <span title="Heals minor brain traumas">Resistance 6</span>, <span title="Heals severe brain traumas">Resistance 9</span>, <span title="Purges alcohol in the bloodstream">Transmission 8</span>
-|-
-!Nano-symbiosis
-| 0 || 2 || 2 || -1 || 7 || [[Guide_to_chemistry#Decaying Uranium Gel|Decaying Uranium Gel]]/[[Guide_to_chemistry#Unstable Uranium Gel|Unstable Uranium Gel]] || style="color:#0000ff" | The virus reacts to nanites in the host's bloodstream by enhancing their replication cycle.||<span title="Increases the replication boost.">Stage Speed 7</span>, <span title="Increases the virus' growth rate while nanites are present.">Transmission 5</span>
 |-
 !Narcolepsy
 | -1 || -2 || -3 || 0 || 6 || [[Plasma]]/[[Guide_to_chemistry#Decaying Uranium Gel|Decaying Uranium Gel]]/[[Guide_to_chemistry#Virus Plasma|Virus Plasma]] || style="color:#ff0000"| Makes the host drowsy and prone to falling asleep randomly.||<span title="Causes the host to periodically emit a yawn that spreads the virus in a manner similar to that of a sneeze">Transmission 4</span>, <span title="Causes narcolepsy more often, increasing the chance of the host falling asleep">Stage Speed 10</span>
@@ -94,11 +91,8 @@
 !Sensory Restoration
 | 0 || 1 || -2 || 2 || 4 || [[Guide_to_chemistry#Unstable Mutagen|Unstable Mutagen]]/[[Guide_to_chemistry#Sucrose Agar|Sucrose Agar]] || style="color:#00aa00"| Restores mob's senses by fixing eye and ear damage.||None
 |-
-!Shivering
-|0 || 2 || 3 || 2 || 2 || [[Guide_to_chemistry#Unstable Mutagen|Unstable Mutagen]]/[[Virus Food]] || style="color:#ff0000"| Cools down your body. Won't reach damaging levels unless thresholds are met.||<span title="Increases cooling speed; the host can fall below safe temperature levels">Stage Speed 5</span>, <span title="Further increases cooling speed">Stage Speed 10</span>
-|-
-!Silicolysis
-| 0 || 4 || -1 || 1 || 7 || [[Guide_to_chemistry#Decaying Uranium Gel|Decaying Uranium Gel]]/[[Guide_to_chemistry#Unstable Uranium Gel|Unstable Uranium Gel]] || style="color:#0000ff" | The virus reacts to nanites in the host's bloodstream by attacking and consuming them.||<span title="Increases the virus' growth rate while nanites are present.">Stage Speed 5</span>, <span title="Severely increases the rate at which the nanites are destroyed.">Resistance 7</span>
+!Chills
+|0 || 2 || 3 || 2 || 2 || [[Guide_to_chemistry#Unstable Mutagen|Unstable Mutagen]]/[[Virus Food]] || style="color:#ff0000"| Cools down your body. Won't reach damaging levels unless thresholds are met.||<span title="Increases the intensity of the cooling; the host can fall below safe temperature levels">Stage Speed 5</span>, <span title="Increases the intensity of the cooling even further">Stage Speed 10</span>
 |-
 !Sneezing
 | -2 || 3 || 0 || 4 || 1 || [[Virus Food]]/[[Guide_to_chemistry#Virus Rations|Virus Rations]] || style="color:#0000ff" | The virus causes irritation of the nasal cavity, making the host sneeze occasionally. Sneezes from this symptom will spread the virus in a 4 meter cone in front of the host.||<span title="Increases sneezing range, spreading the virus over 6 meter cone instead of over a 4 meter cone.">Transmission 9</span>, <span title="The force of each sneeze catapults the host backwards, potentially stunning and lightly damaging them if they hit a wall or another person mid-flight.">Stage Speed 17</span>, <span title="The symptom remains hidden until active">Stealth 4</span>
@@ -113,7 +107,7 @@
 | 0 || -1 || 0 || 1 || 6 || [[Plasma]]/[[Guide_to_chemistry#Decaying Uranium Gel|Decaying Uranium Gel]]/[[Guide_to_chemistry#Virus Plasma|Virus Plasma]] || style="color:#00aa00"| Heals brute and burn damage if the host drank water recently, or if they're wet. Heals burn damage more efficiently. ||<span title="Water is consumed at a much slower rate">Resistance 5</span>, <span title="Increases healing speed">Stage Speed 7</span>
 |-
 !Toxolysis
-| 0 || -2 || -2 || -2 || 7 || [[Guide_to_chemistry#Decaying Uranium Gel|Decaying Uranium Gel]]/[[Guide_to_chemistry#Unstable Uranium Gel|Unstable Uranium Gel]] || style="color:#0000ff"| Purges all chemicals at a fast rate from the bloodstream.||<span title="Increases chem removal speed">Resistance 7</span>, <span title="Consumed chemicals nourish the host">Stage Speed 6</span>
+| 0 || -2 || 2 || -2 || 7 || [[Guide_to_chemistry#Decaying Uranium Gel|Decaying Uranium Gel]]/[[Guide_to_chemistry#Unstable Uranium Gel|Unstable Uranium Gel]] || style="color:#0000ff"| Purges all chemicals at a fast rate from the bloodstream.||<span title="Increases chem removal speed">Resistance 7</span>, <span title="Consumed chemicals nourish the host">Stage Speed 6</span>
 |-
 !Viral Evolutionary Acceleration
 | -2 || -3 || 5 || 3 || 3 || [[Guide_to_chemistry#Unstable Mutagen|Unstable Mutagen]]/[[Guide_to_chemistry#Mutagenic Agar|Mutagenic Agar]] || style="color:#00aa00"| Massively buffs the evolutionary cycle of viruses, causing it to be faster acting, better at infecting, but more easily detected and cured.||None
