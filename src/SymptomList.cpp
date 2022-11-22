@@ -8,7 +8,7 @@
 
 namespace VirusHelper
 {
-    std::array<Symptom, kNumSymptoms> SymptomList = {
+    const std::array<const Symptom, kNumSymptoms> SymptomList = {
         Symptom
         {
             .name = "Acute Respiratory Distress Syndrome",

@@ -36,7 +36,7 @@ if __name__ == '__main__':
         out_file.write("#include \"Symptom.hpp\"\n\n")
         out_file.write("namespace VirusHelper\n")
         out_file.write("{\n")
-        out_file.write("    std::array<Symptom, kNumSymptoms> SymptomList = {\n")
+        out_file.write("    const std::array<const Symptom, kNumSymptoms> SymptomList = {\n")
         print(f"Number of symptoms: {len(symptom_list)}")
         for symptom in symptom_list:
             out_file.write("        Symptom\n")
