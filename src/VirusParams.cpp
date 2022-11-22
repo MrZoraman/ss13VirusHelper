@@ -27,6 +27,23 @@ namespace VirusHelper
         }
     }
 
+    void VirusParams::PrintBlacklist() const
+    {
+        std::cout << "Blacklist: ";
+        if (blacklist_symptom_ < 0)
+        {
+            std::cout << "None\n";
+        }
+        else if (blacklist_symptom_ > kNumSymptoms)
+        {
+            std::cout << "Invalid\n";
+        }
+        else
+        {
+            std::cout << SymptomList[blacklist_symptom_].name << "\n";
+        }
+    }
+
     void VirusParams::PrintWeights() const
     {
         std::cout << "Weights:\n";

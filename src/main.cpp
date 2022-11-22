@@ -219,6 +219,7 @@ int main()
             {
                 std::cout << "Stealth block: [ ]\n";
             }
+            params.PrintBlacklist();
         }
         else if (choice == TopMenuChoice::ListSymptoms)
         {
@@ -263,17 +264,9 @@ int main()
         else if (choice == TopMenuChoice::SetBlacklistSymptom)
         {
             std::int32_t virus_symptom_index = -1;
-            while (virus_symptom_index < 0 || virus_symptom_index >= kNumSymptomsPerVirus)
-            {
-                std::cout << "Select a symptom index between 0 and " << +kNumSymptomsPerVirus - 1 << " inclusive:\n";
-                std::cout << "> ";
-                std::cin >> virus_symptom_index;
-                if (virus_symptom_index < 0 || virus_symptom_index >= kNumSymptomsPerVirus)
-                {
-                    std::cout << "Symptom index out of range!\n";
-                }
-            }
-
+            std::cout << "Select a symptom index:\n";
+            std::cout << "> ";
+            std::cin >> virus_symptom_index;
             params.set_blacklist_symptom(virus_symptom_index);
         }
     }

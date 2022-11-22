@@ -36,6 +36,7 @@ namespace VirusHelper
         void PrintWeights() const;
         void PrintThresholds() const;
         bool IsStealthBlocked() const;
+        void PrintBlacklist() const;
 
         [[nodiscard]] std::int32_t FindVirus(const std::array<Virus, kNumViruses>& viruses) const;
 
