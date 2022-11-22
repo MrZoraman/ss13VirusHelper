@@ -7,7 +7,7 @@
 
 namespace VirusHelper
 {
-    const size_t kNumSymptoms = 44;
+    const size_t kNumSymptoms = 42;
 
     extern const std::array<const Symptom, kNumSymptoms> SymptomList;
 }
